@@ -1,0 +1,51 @@
+openapi: 3.0.3
+info:
+  title: Individ API
+  version: 1.0.0
+  description: API för att tillhandahålla om individ för givet individ id
+
+paths:
+  /individ/{id}:
+    get:
+      tags: [IndividController]
+      summary: Hämta information om individ
+      description: Hämta information om individ
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Id i UUID format som unikt indentifierar en individ
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Förfrågan utförd OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndividResponse'
+        '400':
+          description: Felaktig förfrågan (t.ex. id som inte är giltigt UUID)
+        '404':
+          description: Finns ingen individ för givet id
+
+components:
+  schemas:
+    IndividResponse:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Id i UUID format som unikt indentifierar en individ
+        typ:
+          type: string
+          description: Typ av värde
+        varde:
+          type: string
+          description: Värde som kan användas för att slå upp information om individ
+      example:
+        id: "7e4b45d1-3b03-47bb-bbc3-9bcf9f2aa84e"
+        typ: "Pnr"
+        varde: "19990101-9999" 
