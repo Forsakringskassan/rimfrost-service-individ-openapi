@@ -24,7 +24,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IndividResponse'
+                $ref: '#/components/schemas/GetIndividResponse'
         '400':
           description: Felaktig förfrågan (t.ex. id som inte är giltigt UUID)
         '404':
@@ -32,7 +32,7 @@ paths:
 
 components:
   schemas:
-    IndividResponse:
+    GetIndividResponse:
       type: object
       properties:
         id:
