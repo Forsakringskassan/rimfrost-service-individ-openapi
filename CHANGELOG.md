@@ -1,3 +1,9 @@
+## 1.0.1 (2026-03-13)
+
+### Bug Fixes
+
+-  Rename IndividResponse to GetIndividResponse ([b2ade](https://github.com/Forsakringskassan/rimfrost-service-individ-openapi/commit/b2ade2853fd18ab) Lars Persson)  
+
 ## 1.0.0 (2026-03-12)
 
 ### Breaking changes
